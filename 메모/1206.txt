@@ -1,0 +1,85 @@
+1교시--------------------
+
+canvas
+1) html의 canvas요소
+<canvas></canvas>
+-width와 height설정 (기본값 300px * 150px)
+
+javascript - getContext(매개변수) 메소드
+캔버스 드로잉 컨텍스트를 반환해주는 메소드
+드로잉에 필요한 함수와 속성을 가진 객체를 생성
+매개변수 2d, webgl(3d)
+ex>
+let canvas = document.querySelector("canvas");
+let ctx = canvas.getContext("2d");
+
+3) 속성
+- fill : 경로의 내부를 채워서 내부가 채워진 도형을 그림
+- fillRect(x,y,width,height) : 색칠 된 사각형을 그림
+- fillStyle : 도형에 채울 때 사용되는 색상 지정
+ex> fillStyle = "#fff" , fillStyle = "red"
+- stroke : 윤곽선을 이용하여 도형을 그림
+- strokeRect(x,y,width,height) 윤곽선으로 사각형을 그림
+- strokeStyle : 윤곽선을 그릴 때 사용되는 색상 지정
+- clearRect(x,y,width,height) : 지정 된 사각형 영역을 지움
+- beginPath() : 새로운 경로를 시작 (펜툴선택)
+- closePath() : 시작 부분과 연결된 직선을 추가
+- moveTo(x,y) : 펜을 지정 된 좌표로 이동
+- lineTo(x,y) : 현재 드로잉 위치에서 지정된 선을 그림
+- arc(x,y,radius,시작각,끝나는각,시계방향)
+	:각-라디안각 Math.PI => 180도 , 2* Math.PI => 360도
+각도 * Math.PI / 180 => 라디안
+----------------------------------
+
+2교시-------------------
+
+애니메이션
+setTimeout : 일정 시간이 지나면 해당 함수를 실행
+setInterval : 일정 시간마다 해당 함수를 실행
+requestAnimationFrame : 브라우저에게 애니메이션을 실행하도록 요청, 재귀 호출을 사용해서 반복
+재귀 함수 
+ : 노미터 주사율에 맞추어 함수가 호출됨
+  60hz사용하는 모니터는 초당 60frame호출
+  144hz사용하는 모니터는 초당 144frame호출
+ : 함수내에서 다시 자기 자신을 부르는 함수
+function recurisionFunc(){
+	.
+	.
+	.
+	recurisionFunc();
+}
+--------------------------------
+
+3교시--------------------------
+
+4)canvas에 이미지 적용
+
+-이미지 객체 생성
+ex> const imgElem = new Image();
+      이미지 객체 경로 지정
+ex> imgElem.src = "./images/img.jpg";
+- 캔버스에 그리기
+drawImage(imgElem,x,y)
+drawImage(imgElem, x,y,width, hieght)
+------------------------------
+
+4교시-----------------------
+
+5)text작성
+- font : 폰트 스타일 지정
+ex> ctx.font = "48px serif"
+- filltext 속이 찬 글자를 작성
+ex> ctx.fillText("Hello Canvas", 10, 50)
+- strokeText(text,x,y) 선으로 된 글자를 작성
+
+6) 상태의 저장과 복원
+- save() canvas의 상태를 저장
+- restore() 가장 최근에 저장된 canvas상태를 복원
+
+7) 변형 메소드
+translate(x,y) 위치이동
+ctx.translate(50,50)
+ctx.fillRect(0,0,25,25)
+---------------------------
+
+

@@ -1,0 +1,26 @@
+https://velog.io 	개발자를위한블로그서비스 링크
+
+자바스크립트 컴포넌트
+화면구성을 각각 컴포넌트로 구성
+1) 컴포넌트 구성 
+-입력받는 컴포넌트 ContentInput.js //맨 앞 대문자
+-항목 나타내는 컴포넌트 Lists.js
+-이벤트 버튼 컴포넌트 ViewBtn.js
+2)
+폴더 inputComponent
+파일 index.html
+폴더 src (소스폴더)
+	Main.js
+	App.js
+	Components
+		ContentInput.js
+		Lists.js
+		ViewBtn.js
+
+
+
+모듈
+1) 내보내기
+export default
+2) 모듈 사용하기
+import 이름 from 파일이름.js
